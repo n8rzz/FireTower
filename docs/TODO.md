@@ -4,15 +4,15 @@
 
 ## Phase 1: Project Setup & Core Infrastructure
 
-- [ ] Set up Xcode project (SwiftUI, iOS 16+)
-- [ ] Create app icon and launch screen placeholder
-- [ ] Define app-wide color palette and theme
-- [ ] Create global data models:
-  - [ ] ObservationSet
-  - [ ] Observation
-- [ ] Implement local storage for observation sets
-- [ ] Set up permissions:
-  - [ ] Location usage prompt
+- [x] Set up Xcode project (SwiftUI, iOS 16+)
+- [x] Create app icon and launch screen placeholder
+- [x] Define app-wide color palette and theme
+- [x] Create global data models:
+  - [x] ObservationSet
+  - [x] Observation
+- [x] Implement local storage for observation sets
+- [x] Set up permissions:
+  - [x] Location usage prompt
   - [ ] Compass calibration handling
 
 ---

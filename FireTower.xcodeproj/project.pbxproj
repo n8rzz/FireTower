@@ -14,6 +14,15 @@
 		11C9C3DD2E41C55100D5C7EF /* FireTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3DC2E41C55100D5C7EF /* FireTowerTests.swift */; };
 		11C9C3E72E41C55100D5C7EF /* FireTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3E62E41C55100D5C7EF /* FireTowerUITests.swift */; };
 		11C9C3E92E41C55100D5C7EF /* FireTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3E82E41C55100D5C7EF /* FireTowerUITestsLaunchTests.swift */; };
+		11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4002E41C89700D5C7EF /* Theme.swift */; };
+		11C9C4052E41CAD900D5C7EF /* ObservationSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */; };
+		11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4062E41CB2200D5C7EF /* Observation.swift */; };
+		11C9C4092E41CCAC00D5C7EF /* ObservationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */; };
+		11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */; };
+		11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */; };
+		11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */; };
+		11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */; };
+		11C9C4162E41D29100D5C7EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11C9C4152E41D29100D5C7EF /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,15 @@
 		11C9C3F82E41C60400D5C7EF /* TODO.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 		11C9C3F92E41C63D00D5C7EF /* data_model_and_component_planning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = data_model_and_component_planning.md; sourceTree = "<group>"; };
 		11C9C3FA2E41C66D00D5C7EF /* wireframes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = wireframes.md; sourceTree = "<group>"; };
+		11C9C4002E41C89700D5C7EF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationSet.swift; sourceTree = "<group>"; };
+		11C9C4062E41CB2200D5C7EF /* Observation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
+		11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationStore.swift; sourceTree = "<group>"; };
+		11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationSetListView.swift; sourceTree = "<group>"; };
+		11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPromptView.swift; sourceTree = "<group>"; };
+		11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Preview.swift"; sourceTree = "<group>"; };
+		11C9C4152E41D29100D5C7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 				11C9C3CA2E41C54F00D5C7EF /* FireTower */,
 				11C9C3DB2E41C55100D5C7EF /* FireTowerTests */,
 				11C9C3E52E41C55100D5C7EF /* FireTowerUITests */,
+				11C9C4152E41D29100D5C7EF /* Info.plist */,
 				11C9C3C92E41C54F00D5C7EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,7 +122,14 @@
 				11C9C3CF2E41C55100D5C7EF /* Assets.xcassets */,
 				11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */,
 				11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */,
+				11C9C40C2E41D08A00D5C7EF /* Managers */,
+				11C9C3FC2E41C79F00D5C7EF /* Models */,
 				11C9C3D12E41C55100D5C7EF /* Preview Content */,
+				11C9C3FE2E41C81600D5C7EF /* Resources */,
+				11C9C3FD2E41C81100D5C7EF /* Stores */,
+				11C9C4002E41C89700D5C7EF /* Theme.swift */,
+				11C9C3FF2E41C82100D5C7EF /* Utilities */,
+				11C9C3FB2E41C78C00D5C7EF /* Views */,
 			);
 			path = FireTower;
 			sourceTree = "<group>";
@@ -143,6 +169,63 @@
 				11C9C3FA2E41C66D00D5C7EF /* wireframes.md */,
 			);
 			path = docs;
+			sourceTree = "<group>";
+		};
+		11C9C3FB2E41C78C00D5C7EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4102E41D0C000D5C7EF /* Permissions */,
+				11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11C9C3FC2E41C79F00D5C7EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4062E41CB2200D5C7EF /* Observation.swift */,
+				11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11C9C3FD2E41C81100D5C7EF /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		11C9C3FE2E41C81600D5C7EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11C9C3FF2E41C82100D5C7EF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		11C9C40C2E41D08A00D5C7EF /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */,
+				11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		11C9C4102E41D0C000D5C7EF /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */,
+			);
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +334,7 @@
 			files = (
 				11C9C3D32E41C55100D5C7EF /* Preview Assets.xcassets in Resources */,
 				11C9C3D02E41C55100D5C7EF /* Assets.xcassets in Resources */,
+				11C9C4162E41D29100D5C7EF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +359,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
 				11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */,
+				11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */,
+				11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */,
+				11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */,
+				11C9C4052E41CAD900D5C7EF /* ObservationSet.swift in Sources */,
+				11C9C4092E41CCAC00D5C7EF /* ObservationStore.swift in Sources */,
+				11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */,
+				11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,12 +534,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FireTower/Preview Content\"";
 				DEVELOPMENT_TEAM = UFNVWGWN9B;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/FireTower/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,9 +548,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nacerous.FireTower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -471,12 +568,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FireTower/Preview Content\"";
 				DEVELOPMENT_TEAM = UFNVWGWN9B;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/FireTower/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,9 +582,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nacerous.FireTower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

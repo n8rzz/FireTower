@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FireTowerApp: App {
+    @StateObject private var observationStore = ObservationStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ObservationSetListView()
+                .environmentObject(observationStore)
         }
     }
 }
