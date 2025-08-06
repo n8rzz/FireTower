@@ -10,11 +10,10 @@ import SwiftUI
 
 struct ObservationSetListView: View {
     var body: some View {
-        VStack() {
-            Text("ObservationSetListView")
-                .foregroundColor(Theme.Colors.TextPrimary)
+        NavigationView {
+            Text("Observation Sets List")
+                .navigationTitle("Observations")
         }
-        .background(Theme.Colors.Background)
     }
 }
 

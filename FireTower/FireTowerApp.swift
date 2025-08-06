@@ -8,13 +8,10 @@
 import SwiftUI
 
 @main
-struct FireTowerApp: App {
-    @StateObject private var observationStore = ObservationStore()
-
+struct FireTowerApp: App {    
     var body: some Scene {
         WindowGroup {
-            ObservationSetListView()
-                .environmentObject(observationStore)
+            MainTabView()
         }
     }
 }
