@@ -11,8 +11,13 @@ import SwiftUI
 struct ObservationSetListView: View {
     var body: some View {
         NavigationView {
-            Text("Observation Sets List")
-                .navigationTitle("Observations")
+            VStack {
+                Spacer()
+                Text("OBSERVATIONS")
+                Spacer()
+            }
+            .background(Color(.systemBackground))
+            .navigationTitle("Observations")
         }
     }
 }

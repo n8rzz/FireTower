@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 struct MainTabView: View {
-    @StateObject private var observationStore = ObservationStore()
-
+    @EnvironmentObject private var observationStore: ObservationStore
+    @EnvironmentObject private var locationManager: LocationManager
+    
     var body: some View {
         TabView {
             ObservationSetListView()
-                .environmentObject(observationStore)
                 .tabItem {
                     Label("Observations", systemImage: "list.bullet")
                 }
@@ -29,6 +29,7 @@ struct MainTabView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        .ignoresSafeArea(.all, edges: .all)
     }
 }
 

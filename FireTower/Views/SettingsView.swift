@@ -11,8 +11,13 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         NavigationView {
-            Text("Settings")
-                .navigationTitle("Settings")
+            VStack {
+                Spacer()
+                Text("Settings")
+                Spacer()
+            }
+            .background(Color(.systemBackground))
+            .navigationTitle("Settings")
         }
     }
 }

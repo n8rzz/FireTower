@@ -11,10 +11,15 @@ import SwiftUI
 struct CompassMapContainerView: View {
     var body: some View {
         NavigationView {
-            Text("Compass + Map View")
-                .navigationTitle("Compass")
-            
-            HeadingAccuracyWarningView()
+            VStack {
+                HeadingAccuracyWarningView()
+                
+                Spacer()
+                Text("Compass + Map View")
+                Spacer()
+            }
+            .background(Color(.systemBackground))
+            .navigationTitle("Compass")
         }
     }
 }
