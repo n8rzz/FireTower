@@ -44,7 +44,8 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-        return true // Always allow calibration prompt if needed
+        // Always allow calibration prompt if needed
+        return true 
     }
 }
 

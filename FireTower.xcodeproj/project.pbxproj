@@ -22,7 +22,8 @@
 		11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */; };
 		11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */; };
 		11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */; };
-		11C9C4162E41D29100D5C7EF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11C9C4152E41D29100D5C7EF /* Info.plist */; };
+		11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4172E41D69400D5C7EF /* HeadingAccuracyWarningView.swift */; };
+		11C9C41A2E41D6AD00D5C7EF /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4192E41D6AD00D5C7EF /* CompassView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPromptView.swift; sourceTree = "<group>"; };
 		11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Preview.swift"; sourceTree = "<group>"; };
 		11C9C4152E41D29100D5C7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C9C4172E41D69400D5C7EF /* HeadingAccuracyWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingAccuracyWarningView.swift; sourceTree = "<group>"; };
+		11C9C4192E41D6AD00D5C7EF /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +104,6 @@
 				11C9C3CA2E41C54F00D5C7EF /* FireTower */,
 				11C9C3DB2E41C55100D5C7EF /* FireTowerTests */,
 				11C9C3E52E41C55100D5C7EF /* FireTowerUITests */,
-				11C9C4152E41D29100D5C7EF /* Info.plist */,
 				11C9C3C92E41C54F00D5C7EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +124,7 @@
 				11C9C3CF2E41C55100D5C7EF /* Assets.xcassets */,
 				11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */,
 				11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */,
+				11C9C4152E41D29100D5C7EF /* Info.plist */,
 				11C9C40C2E41D08A00D5C7EF /* Managers */,
 				11C9C3FC2E41C79F00D5C7EF /* Models */,
 				11C9C3D12E41C55100D5C7EF /* Preview Content */,
@@ -176,6 +179,7 @@
 			children = (
 				11C9C4102E41D0C000D5C7EF /* Permissions */,
 				11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */,
+				11C9C4192E41D6AD00D5C7EF /* CompassView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */,
+				11C9C4172E41D69400D5C7EF /* HeadingAccuracyWarningView.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -334,7 +339,6 @@
 			files = (
 				11C9C3D32E41C55100D5C7EF /* Preview Assets.xcassets in Resources */,
 				11C9C3D02E41C55100D5C7EF /* Assets.xcassets in Resources */,
-				11C9C4162E41D29100D5C7EF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,12 +365,14 @@
 			files = (
 				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
+				11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */,
 				11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */,
 				11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */,
 				11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */,
 				11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */,
 				11C9C4052E41CAD900D5C7EF /* ObservationSet.swift in Sources */,
 				11C9C4092E41CCAC00D5C7EF /* ObservationStore.swift in Sources */,
+				11C9C41A2E41D6AD00D5C7EF /* CompassView.swift in Sources */,
 				11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */,
 				11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */,
 			);
