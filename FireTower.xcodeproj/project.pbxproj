@@ -26,7 +26,8 @@
 		11C9C41C2E43084100D5C7EF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C41B2E43084100D5C7EF /* MainTabView.swift */; };
 		11C9C41E2E4308CF00D5C7EF /* CompassMapContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */; };
 		11C9C4202E4308EE00D5C7EF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C41F2E4308EE00D5C7EF /* SettingsView.swift */; };
-		11EACC6A2E431DBC009BF91C /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC692E431DBC009BF91C /* LaunchScreenView.swift */; };
+		11EACC6D2E4321D3009BF91C /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC6C2E4321D3009BF91C /* LaunchScreenView.swift */; };
+		11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC712E43223E009BF91C /* FireTowerSilhouette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +76,8 @@
 		11C9C41B2E43084100D5C7EF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassMapContainerView.swift; sourceTree = "<group>"; };
 		11C9C41F2E4308EE00D5C7EF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		11EACC692E431DBC009BF91C /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		11EACC6C2E4321D3009BF91C /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		11EACC712E43223E009BF91C /* FireTowerSilhouette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTowerSilhouette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,11 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */,
+				11EACC6B2E43216C009BF91C /* LaunchScreen */,
 				11C9C41B2E43084100D5C7EF /* MainTabView.swift */,
 				11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */,
 				11C9C4102E41D0C000D5C7EF /* Permissions */,
 				11C9C41F2E4308EE00D5C7EF /* SettingsView.swift */,
-				11EACC692E431DBC009BF91C /* LaunchScreenView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +242,15 @@
 				11C9C4172E41D69400D5C7EF /* HeadingAccuracyWarningView.swift */,
 			);
 			path = Permissions;
+			sourceTree = "<group>";
+		};
+		11EACC6B2E43216C009BF91C /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				11EACC712E43223E009BF91C /* FireTowerSilhouette.swift */,
+				11EACC6C2E4321D3009BF91C /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,11 +385,12 @@
 			files = (
 				11C9C4202E4308EE00D5C7EF /* SettingsView.swift in Sources */,
 				11C9C41E2E4308CF00D5C7EF /* CompassMapContainerView.swift in Sources */,
+				11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */,
 				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
 				11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */,
-				11EACC6A2E431DBC009BF91C /* LaunchScreenView.swift in Sources */,
 				11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */,
+				11EACC6D2E4321D3009BF91C /* LaunchScreenView.swift in Sources */,
 				11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */,
 				11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */,
 				11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */,

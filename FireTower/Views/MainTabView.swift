@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct MainTabView: View {
-    @EnvironmentObject private var observationStore: ObservationStore
-    @EnvironmentObject private var locationManager: LocationManager
+    @StateObject private var locationManager = LocationManager()
+    @StateObject private var observationStore = ObservationStore()
     
     var body: some View {
         TabView {
@@ -29,7 +29,11 @@ struct MainTabView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .ignoresSafeArea(.all, edges: .all)
+        .environmentObject(locationManager)
+        .environmentObject(observationStore)
+        .onAppear {
+            locationManager.requestLocationIfNeeded()
+        }
     }
 }
 

@@ -9,14 +9,20 @@ import SwiftUI
 
 @main
 struct FireTowerApp: App {
-    @StateObject private var locationManger = LocationManager()
-    @StateObject private var observationStore = ObservationStore()
+    @State private var shouldShowLaunchScreen = true
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
-                .environmentObject(locationManger)
-                .environmentObject(observationStore)
+            if shouldShowLaunchScreen {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                            shouldShowLaunchScreen = false
+                        }
+                    }
+            } else {
+                MainTabView()
+            }
         }
     }
 }

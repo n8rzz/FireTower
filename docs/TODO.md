@@ -14,6 +14,8 @@
 - [x] Set up permissions:
   - [x] Location usage prompt
   - [ ] Compass calibration handling
+- [x] Add `MainTabView` with links to placeholders
+- [x] Add basic LaunchScreen
 
 ---
 

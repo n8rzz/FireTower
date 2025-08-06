@@ -47,5 +47,11 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         // Always allow calibration prompt if needed
         return true 
     }
+    
+    func requestLocationIfNeeded() {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            manager.requestWhenInUseAuthorization()
+        }
+    }
 }
 
