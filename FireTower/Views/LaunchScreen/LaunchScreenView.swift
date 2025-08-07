@@ -10,7 +10,8 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     @State private var smokeOffset: CGFloat = 100
-    @State private var fadeOut = false
+    @State private var displayDuration: CGFloat = 7.5
+    @State private var shouldFadeOut = false
     
     var body: some View {
         ZStack {
@@ -32,11 +33,11 @@ struct LaunchScreenView: View {
                     .offset(y: 60)
             }
         }
-        .opacity(fadeOut ? 0 : 1)
+        .opacity(shouldFadeOut ? 0 : 1)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + displayDuration) {
                 withAnimation(.easeOut(duration: 1.75)) {
-                    fadeOut = true
+                    shouldFadeOut = true
                 }
             }
         }

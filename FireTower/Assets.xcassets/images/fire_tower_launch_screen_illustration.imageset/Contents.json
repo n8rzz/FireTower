@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "fire_tower_launch_screen_illustration.png",
+      "filename" : "fire_tower_launch_screen_illustration 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "fire_tower_launch_screen_illustration.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "fire_tower_launch_screen_illustration 1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

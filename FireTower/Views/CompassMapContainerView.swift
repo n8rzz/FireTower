@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CompassMapContainerView: View {
+    @State private var lastCapturedObservation: Observation?
     @State private var shouldShowMap = false
     
     func createRandomObservation() -> Observation {
@@ -26,18 +27,21 @@ struct CompassMapContainerView: View {
         NavigationView {
             VStack {
                 HeadingAccuracyWarningView()
-                
-                Spacer()
-                
-                Circle()
-                    .strokeBorder(Color.gray, lineWidth: 8)
-                    .frame(width: 300, height: 300)
-                    .overlay(Text("Compass").foregroundColor(Theme.Colors.TextPrimary))
-
-                Spacer()
+                                
+                // TODO: abstract?
+                // Compass
+                ZStack {
+                    Circle()
+                        .strokeBorder(Color.gray, lineWidth: 8)
+                        .frame(width: 350, height: 350)
+                    
+                    ArrowView(shaftHeight: 305.00)
+                }
+                .padding(.vertical)
                 
                 Button(action: {
                     let capturedObservation = createRandomObservation()
+                    lastCapturedObservation = capturedObservation
                     print("Simulated observation captured", capturedObservation)
                 }) {
                     HStack {
@@ -52,27 +56,46 @@ struct CompassMapContainerView: View {
                 }
                 .padding(.horizontal)
                 
-                Spacer()
+                if let obs = lastCapturedObservation {
+                    VStack(spacing: 4) {
+                        HStack {
+                            Text(String(format: "Lat: %.5f", obs.latitude))
+                            Text(String(format: "Lat: %.5f", obs.longitude))
+                        }
+//                        Text(String(format: "Elevation: %.0f m", obs.elevation))
+                        Text("Elevation: n/a")
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.black)
+                    .padding(.top, 5)
+                }
                 
-            Button("Show Map") {
+                Spacer()
+                    .ignoresSafeArea()
+                
+                Button("Show Map") {
                     shouldShowMap.toggle()
                 }
                 .font(.subheadline)
                 .padding(.top, 10)
+                
                 Spacer()
             }
             .background(Color(.systemBackground))
-            .navigationTitle("Compass")
+            .navigationTitle("TITLE")
         }
         .sheet(isPresented: $shouldShowMap) {
             VStack {
                 Spacer()
                 
-                Text("Map View (Placeholder)")
+                Text("Observations (3)")
                     .font(.title)
                     .padding()
                 
-                Spacer()
+                Rectangle()
+                    .foregroundColor(.gray)
+                    .padding()
+                    .cornerRadius(10)
             }
             .presentationDetents([.medium, .large])
         }

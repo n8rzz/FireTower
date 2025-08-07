@@ -21,11 +21,30 @@
 
 ## Basic Observations
 
-- [ ] Block in basic UI Components
-  - [ ] Circle for compass (non-functional)
-  - [ ] Button for observation
-  - [ ] Slide up panel for map
-- [ ] Clicking "Capture" stores randomized Observation
+- [x] Block in basic UI Components
+  - [x] Circle for compass (non-functional)
+  - [x] Button for observation
+  - [x] Slide up panel for map
+- [x] Clicking "Capture" stores randomized Observation
+- [x] Add arrow overlay 
+
+---
+
+## Sightings Management
+
+- [ ] Create Sightings store
+  - [ ] support file storage
+- [ ] Store Sightings
+- [ ] Sightings List View:
+  - [ ] Display all sightings with name + count
+  - [ ] Create new sighting (default to today’s date)
+  - [ ] Rename sighting
+  - [ ] Delete with confirmation
+- [ ] Observation Detail View:
+  - [ ] List all observations in selected sighting
+  - [ ] Tap to view details
+  - [ ] Delete observation
+  - [ ] (Optional) Edit screen for heading/lat/lng
 
 ---
 
@@ -43,21 +62,6 @@
   - [ ] Record timestamp & accuracy
   - [ ] Append to active observation set
 - [ ] Confirmation feedback on capture (e.g., animation or toast)
-
----
-
-## Observation Set Management
-
-- [ ] Observation Set List View:
-  - [ ] Display all sets with name + count
-  - [ ] Create new set (default to today’s date)
-  - [ ] Rename set
-  - [ ] Delete with confirmation
-- [ ] Observation Detail View:
-  - [ ] List all observations in selected set
-  - [ ] Tap to view details
-  - [ ] Delete observation
-  - [ ] (Optional) Edit screen for heading/lat/lng
 
 ---
 

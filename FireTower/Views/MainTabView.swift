@@ -14,16 +14,16 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            ObservationSetListView()
-                .tabItem {
-                    Label("Observations", systemImage: "list.bullet")
-                }
-            
             CompassMapContainerView()
                 .tabItem {
-                    Label("Compass/Map", systemImage: "location.north.line.fill")
+                    Label("Compass/Map", systemImage: "arrowshape.up")
                 }
-            
+
+            ObservationSetListView()
+                .tabItem {
+                    Label("Sightings", systemImage: "binoculars.fill")
+                }
+                        
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
