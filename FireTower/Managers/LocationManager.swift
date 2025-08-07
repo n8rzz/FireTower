@@ -8,7 +8,6 @@
 import CoreLocation
 import Combine
 
-@MainActor
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let manager = CLLocationManager()
 
@@ -29,27 +28,31 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.startUpdatingHeading()
     }
 
+    @MainActor
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         authorizationStatus = manager.authorizationStatus
     }
 
+    @MainActor
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
         locationAccuracy = locations.last?.horizontalAccuracy ?? -1
     }
 
+    @MainActor
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         heading = newHeading
         headingAccuracy = newHeading.headingAccuracy
     }
 
+    @MainActor
     func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
         // Always allow calibration prompt if needed
         return true 
     }
     
     func requestLocationIfNeeded() {
-        if CLLocationManager.authorizationStatus() == .notDetermined {
+        if manager.authorizationStatus == .notDetermined {
             manager.requestWhenInUseAuthorization()
         }
     }

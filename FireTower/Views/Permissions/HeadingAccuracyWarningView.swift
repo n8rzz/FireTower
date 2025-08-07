@@ -33,7 +33,7 @@ struct HeadingAccuracyWarningView: View {
 extension LocationManager {
     static var mockPreview: LocationManager {
         let manager = LocationManager()
-        manager.headingAccuracy = 25
+        manager.headingAccuracy = 10
         return manager
     }
 }
