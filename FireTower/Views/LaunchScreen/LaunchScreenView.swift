@@ -15,9 +15,15 @@ struct LaunchScreenView: View {
     var body: some View {
         ZStack {
             // Background sky
-            LinearGradient(gradient: Gradient(colors: [Color(.systemOrange), Color(.systemYellow)]),
-                           startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
+            LinearGradient(
+                gradient: Gradient(colors: [
+                    Color(Theme.Colors.Primary),
+                    Color(.systemOrange)
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             
             VStack {
                 Spacer()

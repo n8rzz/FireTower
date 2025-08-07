@@ -1,8 +1,8 @@
-# Fire Triangulation App – Development Phases & Task Breakdown (MVP)
+# FireTower – Task Breakdown (MVP)
 
 ---
 
-## Phase 1: Project Setup & Core Infrastructure
+## Project Setup & Core Infrastructure
 
 - [x] Set up Xcode project (SwiftUI, iOS 16+)
 - [x] Create app icon and launch screen placeholder
@@ -19,7 +19,17 @@
 
 ---
 
-## Phase 2: Compass View Implementation
+## Basic Observations
+
+- [ ] Block in basic UI Components
+  - [ ] Circle for compass (non-functional)
+  - [ ] Button for observation
+  - [ ] Slide up panel for map
+- [ ] Clicking "Capture" stores randomized Observation
+
+---
+
+## Compass View Implementation
 
 - [ ] Build ADF-style compass view:
   - [ ] Fixed arrow pointing up
@@ -36,20 +46,7 @@
 
 ---
 
-## Phase 3: Map View & Triangulation Logic
-
-- [ ] Show observation points on MapKit
-- [ ] Draw directional rays from each point (based on heading)
-- [ ] Add intersection logic:
-  - [ ] 2-ray: basic line intersection
-  - [ ] 3+ ray: least-squares intersection
-- [ ] Plot intersection point on map
-- [ ] Update in real-time as observations are added/removed
-- [ ] Configurable ray length (default 25 mi)
-
----
-
-## Phase 4: Observation Set Management
+## Observation Set Management
 
 - [ ] Observation Set List View:
   - [ ] Display all sets with name + count
@@ -64,7 +61,20 @@
 
 ---
 
-## Phase 5: Settings & Warnings
+## Map View & Triangulation Logic
+
+- [ ] Show observation points on MapKit
+- [ ] Draw directional rays from each point (based on heading)
+- [ ] Add intersection logic:
+  - [ ] 2-ray: basic line intersection
+  - [ ] 3+ ray: least-squares intersection
+- [ ] Plot intersection point on map
+- [ ] Update in real-time as observations are added/removed
+- [ ] Configurable ray length (default 25 mi)
+
+---
+
+## Settings & Warnings
 
 - [ ] Settings screen:
   - [ ] Ray length setting
@@ -75,7 +85,7 @@
 
 ---
 
-## Phase 6: Persistence & Offline Support
+## Persistence & Offline Support
 
 - [ ] Store observation sets and observations locally (e.g., Codable + FileManager)
 - [ ] Load data on launch
@@ -84,7 +94,7 @@
 
 ---
 
-## Phase 7: Testing & Polish
+## Testing & Polish
 
 - [ ] Unit tests for triangulation/intersection logic
 - [ ] UI testing for each view
@@ -94,7 +104,7 @@
 
 ---
 
-## Phase 8: App Store Preparation (Optional for MVP)
+## App Store Preparation (Optional for MVP)
 
 - [ ] App Store listing (screenshots, description, keywords)
 - [ ] Privacy policy and disclaimer

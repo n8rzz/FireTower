@@ -10,7 +10,8 @@ import SwiftUI
 
 struct FireTowerSilhouette: View {
     var body: some View {
-        Image("firetower_icon") // replace with your vector/silhouette asset
+//        Image("firetower_icon")
+        Image("fire_tower_launch_screen_illustration")
             .resizable()
             .scaledToFit()
             .foregroundColor(.black)
