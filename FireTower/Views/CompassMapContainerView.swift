@@ -13,14 +13,7 @@ struct CompassMapContainerView: View {
     @State private var shouldShowMap = false
     
     func createRandomObservation() -> Observation {
-        return Observation(
-            name: "O\(Int.random(in: 1...100))",
-            heading: Double.random(in: 0...359),
-            latitude: Double.random(in: 37.0...38.0),
-            longitude: Double.random(in: (-123.0)...(-122.0)),
-            locationAccuracy: Double.random(in: 5...30),
-            headingAccuracy: Double.random(in: 0...15)
-        )
+        return Observation.preview
     }
     
     var body: some View {

@@ -1,0 +1,74 @@
+//
+//  ObservationSetListView.swift
+//  FireTower
+//
+//  Created by Nate Geslin on 8/5/25.
+//
+
+import Foundation
+import SwiftUI
+
+struct SightingsListView: View {
+    @ObservedObject var store: SightingStore
+    
+    private func delete(at offsets: IndexSet) {
+        for index in offsets {
+            let itemToDelete = store.sightings[index]
+            store.delete(itemToDelete)
+        }
+    }
+    
+    private func createNewSighting() {
+        let sightingToCreate = Sighting(
+            name: DateFormatter.localizedString(
+                from: Date(),
+                dateStyle: .medium,
+                timeStyle: .none
+            )
+        )
+        store.add(sightingToCreate)
+    }
+    
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(store.sightings) { sighting in
+                    NavigationLink(destination: SightingDetailView(
+                        id: sighting.id,
+                        store: store
+                    )) {
+                        VStack(alignment: .leading) {
+                            Text(sighting.name)
+                                .font(.headline)
+                            Text("\(sighting.observations.count) of \(Sighting.maxObservationCount) observations")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                .onDelete(perform: delete)
+            }
+            .background(Color(.systemBackground))
+            .navigationTitle("Sightings")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: createNewSighting) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            
+//            VStack {
+//                Spacer()
+//                Text("OBSERVATIONS")
+//                Spacer()
+//            }
+        }
+    }
+}
+
+#Preview {
+    SightingsListView(
+        store: .preview
+    )
+}

@@ -15,10 +15,9 @@
 		11C9C3E72E41C55100D5C7EF /* FireTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3E62E41C55100D5C7EF /* FireTowerUITests.swift */; };
 		11C9C3E92E41C55100D5C7EF /* FireTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3E82E41C55100D5C7EF /* FireTowerUITestsLaunchTests.swift */; };
 		11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4002E41C89700D5C7EF /* Theme.swift */; };
-		11C9C4052E41CAD900D5C7EF /* ObservationSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */; };
+		11C9C4052E41CAD900D5C7EF /* Sighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4042E41CAD900D5C7EF /* Sighting.swift */; };
 		11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4062E41CB2200D5C7EF /* Observation.swift */; };
-		11C9C4092E41CCAC00D5C7EF /* ObservationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */; };
-		11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */; };
+		11C9C40B2E41CDBD00D5C7EF /* SightingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40A2E41CDBD00D5C7EF /* SightingsListView.swift */; };
 		11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */; };
 		11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */; };
 		11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */; };
@@ -30,6 +29,12 @@
 		11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC712E43223E009BF91C /* FireTowerSilhouette.swift */; };
 		11EACC772E446009009BF91C /* ArrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC762E446009009BF91C /* ArrowView.swift */; };
 		11EACC792E446093009BF91C /* ArrowHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC782E446093009BF91C /* ArrowHead.swift */; };
+		11EACC7D2E45AC71009BF91C /* SightingStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC7C2E45AC71009BF91C /* SightingStoreProtocol.swift */; };
+		11EACC802E45ACD9009BF91C /* SightingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC7F2E45ACD9009BF91C /* SightingStore.swift */; };
+		11EACC822E45AF56009BF91C /* Sighting+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC812E45AF56009BF91C /* Sighting+Preview.swift */; };
+		11EACC852E45B0C5009BF91C /* Observation+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC842E45B0C5009BF91C /* Observation+Preview.swift */; };
+		11EACC8A2E45B41E009BF91C /* SightingStore+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */; };
+		11EACC8C2E45B81E009BF91C /* SightingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +71,9 @@
 		11C9C3F92E41C63D00D5C7EF /* data_model_and_component_planning.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = data_model_and_component_planning.md; sourceTree = "<group>"; };
 		11C9C3FA2E41C66D00D5C7EF /* wireframes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = wireframes.md; sourceTree = "<group>"; };
 		11C9C4002E41C89700D5C7EF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationSet.swift; sourceTree = "<group>"; };
+		11C9C4042E41CAD900D5C7EF /* Sighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sighting.swift; sourceTree = "<group>"; };
 		11C9C4062E41CB2200D5C7EF /* Observation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observation.swift; sourceTree = "<group>"; };
-		11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationStore.swift; sourceTree = "<group>"; };
-		11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationSetListView.swift; sourceTree = "<group>"; };
+		11C9C40A2E41CDBD00D5C7EF /* SightingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingsListView.swift; sourceTree = "<group>"; };
 		11C9C40D2E41D09B00D5C7EF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPromptView.swift; sourceTree = "<group>"; };
 		11C9C4132E41D11900D5C7EF /* LocationManager+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationManager+Preview.swift"; sourceTree = "<group>"; };
@@ -82,6 +86,12 @@
 		11EACC712E43223E009BF91C /* FireTowerSilhouette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTowerSilhouette.swift; sourceTree = "<group>"; };
 		11EACC762E446009009BF91C /* ArrowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowView.swift; sourceTree = "<group>"; };
 		11EACC782E446093009BF91C /* ArrowHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowHead.swift; sourceTree = "<group>"; };
+		11EACC7C2E45AC71009BF91C /* SightingStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingStoreProtocol.swift; sourceTree = "<group>"; };
+		11EACC7F2E45ACD9009BF91C /* SightingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingStore.swift; sourceTree = "<group>"; };
+		11EACC812E45AF56009BF91C /* Sighting+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sighting+Preview.swift"; sourceTree = "<group>"; };
+		11EACC842E45B0C5009BF91C /* Observation+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observation+Preview.swift"; sourceTree = "<group>"; };
+		11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SightingStore+Preview.swift"; sourceTree = "<group>"; };
+		11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,9 +203,10 @@
 				11EACC752E445FED009BF91C /* components */,
 				11EACC6B2E43216C009BF91C /* LaunchScreen */,
 				11C9C41B2E43084100D5C7EF /* MainTabView.swift */,
-				11C9C40A2E41CDBD00D5C7EF /* ObservationSetListView.swift */,
 				11C9C4102E41D0C000D5C7EF /* Permissions */,
 				11C9C41F2E4308EE00D5C7EF /* SettingsView.swift */,
+				11EACC872E45B34D009BF91C /* Sightings */,
+				11C9C40A2E41CDBD00D5C7EF /* SightingsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,8 +214,8 @@
 		11C9C3FC2E41C79F00D5C7EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11C9C4062E41CB2200D5C7EF /* Observation.swift */,
-				11C9C4042E41CAD900D5C7EF /* ObservationSet.swift */,
+				11EACC882E45B3E7009BF91C /* Sightings */,
+				11EACC862E45B0D1009BF91C /* Observations */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,7 +223,8 @@
 		11C9C3FD2E41C81100D5C7EF /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				11C9C4082E41CCAC00D5C7EF /* ObservationStore.swift */,
+				11EACC832E45B0AF009BF91C /* Observations */,
+				11EACC7E2E45ACC3009BF91C /* Sightings */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -243,8 +255,8 @@
 		11C9C4102E41D0C000D5C7EF /* Permissions */ = {
 			isa = PBXGroup;
 			children = (
-				11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */,
 				11C9C4172E41D69400D5C7EF /* HeadingAccuracyWarningView.swift */,
+				11C9C4112E41D0CF00D5C7EF /* PermissionPromptView.swift */,
 			);
 			path = Permissions;
 			sourceTree = "<group>";
@@ -261,10 +273,53 @@
 		11EACC752E445FED009BF91C /* components */ = {
 			isa = PBXGroup;
 			children = (
-				11EACC762E446009009BF91C /* ArrowView.swift */,
 				11EACC782E446093009BF91C /* ArrowHead.swift */,
+				11EACC762E446009009BF91C /* ArrowView.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		11EACC7E2E45ACC3009BF91C /* Sightings */ = {
+			isa = PBXGroup;
+			children = (
+				11EACC7F2E45ACD9009BF91C /* SightingStore.swift */,
+				11EACC7C2E45AC71009BF91C /* SightingStoreProtocol.swift */,
+				11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */,
+			);
+			path = Sightings;
+			sourceTree = "<group>";
+		};
+		11EACC832E45B0AF009BF91C /* Observations */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observations;
+			sourceTree = "<group>";
+		};
+		11EACC862E45B0D1009BF91C /* Observations */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4062E41CB2200D5C7EF /* Observation.swift */,
+				11EACC842E45B0C5009BF91C /* Observation+Preview.swift */,
+			);
+			path = Observations;
+			sourceTree = "<group>";
+		};
+		11EACC872E45B34D009BF91C /* Sightings */ = {
+			isa = PBXGroup;
+			children = (
+				11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */,
+			);
+			path = Sightings;
+			sourceTree = "<group>";
+		};
+		11EACC882E45B3E7009BF91C /* Sightings */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C4042E41CAD900D5C7EF /* Sighting.swift */,
+				11EACC812E45AF56009BF91C /* Sighting+Preview.swift */,
+			);
+			path = Sightings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,22 +454,27 @@
 			files = (
 				11C9C4202E4308EE00D5C7EF /* SettingsView.swift in Sources */,
 				11C9C41E2E4308CF00D5C7EF /* CompassMapContainerView.swift in Sources */,
+				11EACC802E45ACD9009BF91C /* SightingStore.swift in Sources */,
 				11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */,
 				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
 				11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */,
+				11EACC7D2E45AC71009BF91C /* SightingStoreProtocol.swift in Sources */,
 				11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */,
 				11EACC6D2E4321D3009BF91C /* LaunchScreenView.swift in Sources */,
 				11EACC772E446009009BF91C /* ArrowView.swift in Sources */,
 				11C9C4142E41D11900D5C7EF /* LocationManager+Preview.swift in Sources */,
-				11C9C40B2E41CDBD00D5C7EF /* ObservationSetListView.swift in Sources */,
+				11EACC852E45B0C5009BF91C /* Observation+Preview.swift in Sources */,
+				11C9C40B2E41CDBD00D5C7EF /* SightingsListView.swift in Sources */,
+				11EACC822E45AF56009BF91C /* Sighting+Preview.swift in Sources */,
 				11C9C40E2E41D09B00D5C7EF /* LocationManager.swift in Sources */,
 				11C9C41C2E43084100D5C7EF /* MainTabView.swift in Sources */,
 				11EACC792E446093009BF91C /* ArrowHead.swift in Sources */,
-				11C9C4052E41CAD900D5C7EF /* ObservationSet.swift in Sources */,
-				11C9C4092E41CCAC00D5C7EF /* ObservationStore.swift in Sources */,
+				11C9C4052E41CAD900D5C7EF /* Sighting.swift in Sources */,
+				11EACC8A2E45B41E009BF91C /* SightingStore+Preview.swift in Sources */,
 				11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */,
 				11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */,
+				11EACC8C2E45B81E009BF91C /* SightingDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

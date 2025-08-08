@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @StateObject private var locationManager = LocationManager()
-    @StateObject private var observationStore = ObservationStore()
+    @StateObject private var sightingStore = SightingStore()
     
     var body: some View {
         TabView {
@@ -19,7 +19,7 @@ struct MainTabView: View {
                     Label("Compass/Map", systemImage: "arrowshape.up")
                 }
 
-            ObservationSetListView()
+            SightingsListView(store: sightingStore)
                 .tabItem {
                     Label("Sightings", systemImage: "binoculars.fill")
                 }
@@ -30,7 +30,7 @@ struct MainTabView: View {
                 }
         }
         .environmentObject(locationManager)
-        .environmentObject(observationStore)
+
         .onAppear {
             locationManager.requestLocationIfNeeded()
         }
