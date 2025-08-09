@@ -31,24 +31,32 @@ struct SightingsListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(store.sightings) { sighting in
-                    NavigationLink(destination: SightingDetailView(
-                        id: sighting.id,
-                        store: store
-                    )) {
-                        VStack(alignment: .leading) {
-                            Text(sighting.name)
-                                .font(.headline)
-                            Text("\(sighting.observations.count) of \(Sighting.maxObservationCount) observations")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
+            Group {
+                if store.sightings.isEmpty {
+                    ZStack {
+                        NoSightingsView(store: store)
                     }
+                } else {
+                    List {
+                        ForEach(store.sightings) { sighting in
+                            NavigationLink(destination: SightingDetailView(
+                                id: sighting.id,
+                                store: store
+                            )) {
+                                VStack(alignment: .leading) {
+                                    Text(sighting.name)
+                                        .font(.headline)
+                                    Text("\(sighting.observations.count) of \(Sighting.maxObservationCount) observations")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                        }
+                        .onDelete(perform: delete)
+                    }
+                    .background(Color(.systemBackground))
                 }
-                .onDelete(perform: delete)
             }
-            .background(Color(.systemBackground))
             .navigationTitle("Sightings")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -57,12 +65,6 @@ struct SightingsListView: View {
                     }
                 }
             }
-            
-//            VStack {
-//                Spacer()
-//                Text("OBSERVATIONS")
-//                Spacer()
-//            }
         }
     }
 }

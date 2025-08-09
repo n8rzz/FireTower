@@ -35,6 +35,7 @@
 		11EACC852E45B0C5009BF91C /* Observation+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC842E45B0C5009BF91C /* Observation+Preview.swift */; };
 		11EACC8A2E45B41E009BF91C /* SightingStore+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */; };
 		11EACC8C2E45B81E009BF91C /* SightingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */; };
+		11EACC8E2E46DB37009BF91C /* NoSightingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		11EACC842E45B0C5009BF91C /* Observation+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observation+Preview.swift"; sourceTree = "<group>"; };
 		11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SightingStore+Preview.swift"; sourceTree = "<group>"; };
 		11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDetailView.swift; sourceTree = "<group>"; };
+		11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSightingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */,
+				11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */,
 			);
 			path = Sightings;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
 				11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */,
 				11EACC7D2E45AC71009BF91C /* SightingStoreProtocol.swift in Sources */,
+				11EACC8E2E46DB37009BF91C /* NoSightingsView.swift in Sources */,
 				11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */,
 				11EACC6D2E4321D3009BF91C /* LaunchScreenView.swift in Sources */,
 				11EACC772E446009009BF91C /* ArrowView.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct Theme {
     struct Colors {
+        static let Accent = Color("AccentColor")
         static let Background = Color("Background")
         static let Error = Color("Error")
         static let IntersectionDot = Color("IntersectionDot")
