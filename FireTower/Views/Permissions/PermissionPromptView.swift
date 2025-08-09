@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct PermissionPromptView: View {
-    @EnvironmentObject var locationManager: LocationManager
+    @ObservedObject var locationManager: LocationManager
 
     var body: some View {
         VStack(spacing: 16) {

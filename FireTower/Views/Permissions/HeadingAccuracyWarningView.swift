@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HeadingAccuracyWarningView: View {
-    @EnvironmentObject var locationManager: LocationManager
+    @ObservedObject var locationManager: LocationManager
 
     var body: some View {
         if locationManager.headingAccuracy > 20 {

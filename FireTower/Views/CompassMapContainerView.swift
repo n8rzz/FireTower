@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct CompassMapContainerView: View {
+    @ObservedObject var locationManager: LocationManager
+    
     @State private var lastCapturedObservation: Observation?
     @State private var shouldShowMap = false
     
@@ -19,7 +21,7 @@ struct CompassMapContainerView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HeadingAccuracyWarningView()
+                HeadingAccuracyWarningView(locationManager: locationManager)
                                 
                 // TODO: abstract?
                 // Compass
@@ -33,6 +35,7 @@ struct CompassMapContainerView: View {
                 .padding(.vertical)
                 
                 Button(action: {
+                    print("Current Location: ", locationManager)
                     let capturedObservation = createRandomObservation()
                     lastCapturedObservation = capturedObservation
                     print("Simulated observation captured", capturedObservation)
@@ -75,7 +78,6 @@ struct CompassMapContainerView: View {
                 Spacer()
             }
             .background(Color(.systemBackground))
-            .navigationTitle("TITLE")
         }
         .sheet(isPresented: $shouldShowMap) {
             VStack {
@@ -96,6 +98,7 @@ struct CompassMapContainerView: View {
 }
 
 #Preview {
-    CompassMapContainerView()
-        .environmentObject(LocationManager.mockPreview)
+    CompassMapContainerView(
+        locationManager: .preview
+    )
 }

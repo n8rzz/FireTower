@@ -14,23 +14,21 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            CompassMapContainerView()
-                .tabItem {
-                    Label("Compass/Map", systemImage: "arrowshape.up")
-                }
-
             SightingsListView(store: sightingStore)
                 .tabItem {
                     Label("Sightings", systemImage: "binoculars.fill")
                 }
-                        
+
+            CompassMapContainerView(locationManager: locationManager)
+                .tabItem {
+                    Label("Compass/Map", systemImage: "arrowshape.up")
+                }
+
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .environmentObject(locationManager)
-
         .onAppear {
             locationManager.requestLocationIfNeeded()
         }
