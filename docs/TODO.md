@@ -50,48 +50,151 @@
 
 ## Compass View Implementation
 
-- [ ] Re-map Sighting Detail view to Compass view
-  - [ ] Move observations list into a bottom sheet
-  - [ ] Use active `Sighting` from `SightingStore` singleton
-  - [ ] Disable capture button when at max (5/5) observations
-- [ ] Build SensorsManager (ObservableObject)
-  - [ ] Integrate CoreLocation for lat/lng, horizontalAccuracy, true/magnetic heading
-  - [ ] Integrate CoreMotion for tilt detection (±20°)
-  - [ ] Publish heading, headingAccuracy, location, horizontalAccuracy, isFlat, headingSource
-  - [ ] Start/stop updates with view lifecycle
-- [ ] Build ADF-style compass view
+- [x] Re-map Sighting Detail view to Compass view
+  - [x] **Replace navigation target**
+    - [x] In `SightingsListView`, change `NavigationLink` destination from `SightingDetailView` → `CompassMapContainerView`
+    - x ] Pass `sighting.id`, `store`, and `locationManager` to Compass view
+    - [x] Remove `NavigationView` wrapper inside Compass to avoid nested nav bars
+    - [x] Set navigation title to the active sighting's name
+  - [x] **Compass view data source**
+    - [x] Accept `id: UUID?` and `store: SightingStore` in Compass view
+    - [x] Add computed property to fetch `Sighting` from store by id
+    - [x] Ensure computed property updates when `store.sightings` changes
+    - [ ] bug: view shifts up when "New Sighting" text is replaced with the date
+  - [ ] **Observations list under Capture**
+    - [ ] Show list header: `"Observations (n/5)"`
+    - [/] Include footer: `"Maximum of 5 observations reached."` when at max
+    - [ ] List each observation with:
+      - Name (e.g., "O1")
+      - Heading in degrees
+      - Lat/Lon coordinates
+    - [ ] Support swipe-to-delete (updates store)
+    - [ ] Empty state text: `"No observations yet"`
+  - [x] **Capture button rules**
+    - [x] Disable Capture button when at 5/5 observations
+    - [/] Show info text when disabled: `"Maximum of 5 observations reached."`
+
+- [x] Sensors layer (enhanced `LocationManager`)
+  - [x] CoreLocation: lat/lng + `horizontalAccuracy`
+  - [x] Heading: prefer **true**; fallback to **magnetic**; expose `headingDegrees`
+  - [x] CoreMotion: tilt detection → `tiltDegrees`, `isFlat` (±20°)
+  - [x] Publish: `headingDegrees`, `headingAccuracy`, `headingSource`, `location`, `locationAccuracy`, `isFlat`, `needsCalibrationHint`
+  - [x] Lifecycle: `startUpdates()` / `stopUpdates()`
+
+- [ ] ADF-style compass view
   - [ ] Fixed arrow pointing up
-  - [ ] Rotating compass dial based on heading
+  - [ ] Rotating dial based on live heading
   - [ ] Live numeric heading label
   - [ ] Heading source indicator (“True”/“Mag”)
-  - [ ] Apply project theme fonts/colors
+  - [ ] Apply theme fonts/colors
+
 - [ ] Accuracy & tilt warnings
-  - [ ] Show warning if headingAccuracy > 12°
-  - [ ] Show warning if horizontalAccuracy > 30 m
-  - [ ] Show tilt overlay when outside ±20° (warn only)
-  - [ ] “Calibrate for best results” banner when poor heading accuracy
-- [ ] Capture button
-  - [ ] Gather heading, headingAccuracy, location, horizontalAccuracy, timestamp
-  - [ ] Auto-assign name (O1, O2, …) based on count
-  - [ ] Append observation to active `Sighting` in `SightingStore`
+  - [ ] Show warning if `headingAccuracy > 12°`
+  - [ ] Show warning if `horizontalAccuracy > 30 m`
+  - [ ] Tilt overlay when outside ±20° (warn only)
+  - [ ] “Calibrate for best results” banner when `needsCalibrationHint == true`
+
+- [ ] Capture button (real data)
+  - [ ] Gather: heading, headingAccuracy, lat, lon, horizontalAccuracy, timestamp
+  - [ ] Auto-assign name (`O1`, `O2`, …) based on count
+  - [ ] Append to active `Sighting` in `SightingStore`
   - [ ] Disable capture when at max
+
 - [ ] Confirmation feedback on capture
   - [ ] Haptic feedback
-  - [ ] Toast/snackbar (“Captured O3”)
-  - [ ] Visual pulse animation around dial
+  - [ ] Toast/snackbar (“Captured O#”)
+  - [ ] Visual pulse around dial
+
 - [ ] Observation sheet view
-  - [ ] Editable Sighting name
-  - [ ] Read-only list of observations (for MVP)
+  - [ ] Editable Sighting name (inline)
+  - [ ] Read-only list of observations (MVP)
   - [ ] (Future) Delete observation support
+
 - [ ] Navigation
-  - [ ] Pass active `Sighting` ID from Sightings list to Compass view
-  - [ ] Inject `SightingStore` singleton into Compass view
-- [ ] Permissions
-  - [ ] Ensure “When In Use” location permissions requested
-  - [ ] Show system compass calibration prompt if required
+  - [ ] Pass active `Sighting` ID from Sightings list to Compass container
+  - [ ] Inject `SightingStore` singleton into Compass container
+
+- [x] Live sensor stats (always visible under Capture)
+  - [x] Heading (°) + source
+  - [x] Heading accuracy
+  - [x] Lat / Lon
+  - [x] GPS accuracy
+  - [x] Tilt° + flatness state
+
+- [x] Permissions
+  - [x] Ensure “When In Use” location permission (already in place)
+  - [x] Allow system compass calibration prompt
+
 - [ ] Polish
-  - [ ] Portrait-only layout
-  - [ ] MVP-target iOS version (latest - 1)
+  - [ ] Portrait-only enforcement
+  - [ ] Target = latest - 1 (confirm project setting)
+
+---
+
+## Proposed component breakdown
+
+- `Views/Compass/CompassHeader.swift`
+  - Contains the top “stack”: `HeadingAccuracyWarningView`, `HeadingBadge`, and the circular dial (`ArrowView`).
+  - Props:
+    - `headingDegrees: Double?` (for the badge)
+    - maybe a `showWarning: Bool` (or pass `LocationManager` if you prefer)
+
+- `Views/Compass/CompassDial.swift`
+  - Just the visual dial you have now:
+    - Circle stroke + `ArrowView`
+  - Props:
+    - `size: CGFloat` (so we’re not hardcoding 350)
+    - `arrowHeight: CGFloat`
+
+- `Views/Compass/CaptureButtonRow.swift`
+  - The centered “Capture” card row + disabled state + max‑reached info text (optional prop).
+  - Props:
+    - `isDisabled: Bool`
+    - `onTap: () -> Void`
+
+- `Views/Compass/SensorStatsRow.swift` (optional; you already have `SensorStatsView`)
+  - If you want it styled specifically for list rows (no separators, full‑bleed).
+
+- `Views/Observations/ObservationsSection.swift`
+  - The section used inside your `List`, with header/empty state, and swipe‑to‑delete.
+  - Props:
+    - `observations: [Observation]`
+    - `maxCount: Int`
+    - `onDelete: (IndexSet) -> Void`
+
+- `Views/Common/ToastBanner.swift` (already in your file; just move)
+  - No changes needed—simply move to a common folder for reuse.
+
+- `Utilities/Formatters.swift` (optional)
+  - `static func timeHHmm(_ date: Date) -> String`
+  - `static func latLon(_ lat: Double, _ lon: Double) -> String`
+  - Avoids ad‑hoc `DateFormatter()` creation in views.
+
+## What `CompassMapContainerView` keeps
+
+- State (`activeSightingID`, `shouldShowMap`, toast state).
+- Store lookups (`sighting`, counts, max logic).
+- Capture action (build + append).
+- Toolbar (map icon) and sheet presentation.
+- The top-level `List` composition.
+
+## End result
+
+- `CompassMapContainerView` becomes a short, readable composer:
+  - `CompassHeader(...)`
+  - `CaptureButtonRow(isDisabled: isAtMaximumObservations, onTap: capture)`
+  - `SensorStatsRow(...)` (or your existing `SensorStatsView`)
+  - `ObservationsSection(...)`
+  - Toast overlay + toolbar + sheet remain as-is.
+
+## Suggested order (fastest wins)
+
+1) **ObservationsSection.swift** (easy, isolates the longest block)
+2) **CaptureButtonRow.swift** (removes action UI noise from the main file)
+3) **CompassDial.swift** + **CompassHeader.swift** (pure UI extraction)
+4) Move **ToastBanner** to `Views/Common`
+5) Add **Formatters.swift** (optional polish)
+
 
 
 ---

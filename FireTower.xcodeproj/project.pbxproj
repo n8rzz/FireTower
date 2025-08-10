@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1142C89F2E4843E6002E0B60 /* HeadingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142C89E2E4843E6002E0B60 /* HeadingBadge.swift */; };
+		1142C8A12E48595B002E0B60 /* ToastBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142C8A02E48595B002E0B60 /* ToastBanner.swift */; };
 		11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */; };
 		11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */; };
 		11C9C3D02E41C55100D5C7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C9C3CF2E41C55100D5C7EF /* Assets.xcassets */; };
@@ -34,8 +36,8 @@
 		11EACC822E45AF56009BF91C /* Sighting+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC812E45AF56009BF91C /* Sighting+Preview.swift */; };
 		11EACC852E45B0C5009BF91C /* Observation+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC842E45B0C5009BF91C /* Observation+Preview.swift */; };
 		11EACC8A2E45B41E009BF91C /* SightingStore+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */; };
-		11EACC8C2E45B81E009BF91C /* SightingDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */; };
 		11EACC8E2E46DB37009BF91C /* NoSightingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */; };
+		11EACC902E470D29009BF91C /* SensorStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EACC8F2E470D29009BF91C /* SensorStatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1142C89E2E4843E6002E0B60 /* HeadingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBadge.swift; sourceTree = "<group>"; };
+		1142C8A02E48595B002E0B60 /* ToastBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBanner.swift; sourceTree = "<group>"; };
 		11C9C3C82E41C54F00D5C7EF /* FireTower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireTower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTowerApp.swift; sourceTree = "<group>"; };
 		11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,8 +96,8 @@
 		11EACC812E45AF56009BF91C /* Sighting+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sighting+Preview.swift"; sourceTree = "<group>"; };
 		11EACC842E45B0C5009BF91C /* Observation+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observation+Preview.swift"; sourceTree = "<group>"; };
 		11EACC892E45B41E009BF91C /* SightingStore+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SightingStore+Preview.swift"; sourceTree = "<group>"; };
-		11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SightingDetailView.swift; sourceTree = "<group>"; };
 		11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSightingsView.swift; sourceTree = "<group>"; };
+		11EACC8F2E470D29009BF91C /* SensorStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorStatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1142C89D2E481204002E0B60 /* Compass */ = {
+			isa = PBXGroup;
+			children = (
+				11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */,
+				1142C89E2E4843E6002E0B60 /* HeadingBadge.swift */,
+				1142C8A02E48595B002E0B60 /* ToastBanner.swift */,
+			);
+			path = Compass;
+			sourceTree = "<group>";
+		};
 		11C9C3BF2E41C54F00D5C7EF = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +166,6 @@
 				11C9C40C2E41D08A00D5C7EF /* Managers */,
 				11C9C3FC2E41C79F00D5C7EF /* Models */,
 				11C9C3D12E41C55100D5C7EF /* Preview Content */,
-				11C9C3FE2E41C81600D5C7EF /* Resources */,
 				11C9C3FD2E41C81100D5C7EF /* Stores */,
 				11C9C4002E41C89700D5C7EF /* Theme.swift */,
 				11C9C3FF2E41C82100D5C7EF /* Utilities */,
@@ -201,14 +214,13 @@
 		11C9C3FB2E41C78C00D5C7EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */,
+				1142C89D2E481204002E0B60 /* Compass */,
 				11EACC752E445FED009BF91C /* components */,
 				11EACC6B2E43216C009BF91C /* LaunchScreen */,
 				11C9C41B2E43084100D5C7EF /* MainTabView.swift */,
 				11C9C4102E41D0C000D5C7EF /* Permissions */,
 				11C9C41F2E4308EE00D5C7EF /* SettingsView.swift */,
 				11EACC872E45B34D009BF91C /* Sightings */,
-				11C9C40A2E41CDBD00D5C7EF /* SightingsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,8 +228,8 @@
 		11C9C3FC2E41C79F00D5C7EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				11EACC882E45B3E7009BF91C /* Sightings */,
 				11EACC862E45B0D1009BF91C /* Observations */,
+				11EACC882E45B3E7009BF91C /* Sightings */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,13 +241,6 @@
 				11EACC7E2E45ACC3009BF91C /* Sightings */,
 			);
 			path = Stores;
-			sourceTree = "<group>";
-		};
-		11C9C3FE2E41C81600D5C7EF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		11C9C3FF2E41C82100D5C7EF /* Utilities */ = {
@@ -277,6 +282,7 @@
 			children = (
 				11EACC782E446093009BF91C /* ArrowHead.swift */,
 				11EACC762E446009009BF91C /* ArrowView.swift */,
+				11EACC8F2E470D29009BF91C /* SensorStatsView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -310,8 +316,8 @@
 		11EACC872E45B34D009BF91C /* Sightings */ = {
 			isa = PBXGroup;
 			children = (
-				11EACC8B2E45B81E009BF91C /* SightingDetailView.swift */,
 				11EACC8D2E46DB37009BF91C /* NoSightingsView.swift */,
+				11C9C40A2E41CDBD00D5C7EF /* SightingsListView.swift */,
 			);
 			path = Sightings;
 			sourceTree = "<group>";
@@ -456,10 +462,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11C9C4202E4308EE00D5C7EF /* SettingsView.swift in Sources */,
+				1142C8A12E48595B002E0B60 /* ToastBanner.swift in Sources */,
 				11C9C41E2E4308CF00D5C7EF /* CompassMapContainerView.swift in Sources */,
 				11EACC802E45ACD9009BF91C /* SightingStore.swift in Sources */,
 				11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */,
 				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
+				1142C89F2E4843E6002E0B60 /* HeadingBadge.swift in Sources */,
+				11EACC902E470D29009BF91C /* SensorStatsView.swift in Sources */,
 				11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */,
 				11C9C4182E41D69400D5C7EF /* HeadingAccuracyWarningView.swift in Sources */,
 				11EACC7D2E45AC71009BF91C /* SightingStoreProtocol.swift in Sources */,
@@ -478,7 +487,6 @@
 				11EACC8A2E45B41E009BF91C /* SightingStore+Preview.swift in Sources */,
 				11C9C4072E41CB2200D5C7EF /* Observation.swift in Sources */,
 				11C9C4122E41D0CF00D5C7EF /* PermissionPromptView.swift in Sources */,
-				11EACC8C2E45B81E009BF91C /* SightingDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +659,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,6 +694,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

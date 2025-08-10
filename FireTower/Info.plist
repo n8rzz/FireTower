@@ -4,31 +4,26 @@
 <dict>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-    
 	<key>CFBundleIdentifier</key>
 	<string>com.nacerous.FireTower</string>
-	
-    <key>CFBundleName</key>
+	<key>CFBundleName</key>
 	<string>FireTower</string>
-	
-    <key>CFBundleShortVersionString</key>
+	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	
-    <key>CFBundleVersion</key>
+	<key>CFBundleVersion</key>
 	<string>1</string>
-	
-    <key>NSLocationWhenInUseUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app uses your location to triangulate fire sightings</string>
-    
-    <key>UILaunchScreen</key>
-    <dict>
-        <key>BackgroundColorName</key>
-        <string>systemBackground</string>
-        <key>ImageName</key>
-        <string></string>
-    </dict>
-<!--    Added via LaunchScreen.storyboard-->
-<!--    <key>UILaunchStoryboardName</key>-->
-<!--    <string>LaunchScreen</string>-->
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>BackgroundColorName</key>
+		<string>systemBackground</string>
+		<key>ImageName</key>
+		<string></string>
+	</dict>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>

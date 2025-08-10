@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SightingsListView: View {
     @ObservedObject var store: SightingStore
+    @ObservedObject var locationManager: LocationManager
     
     private func delete(at offsets: IndexSet) {
         for index in offsets {
@@ -39,10 +40,13 @@ struct SightingsListView: View {
                 } else {
                     List {
                         ForEach(store.sightings) { sighting in
-                            NavigationLink(destination: SightingDetailView(
-                                id: sighting.id,
-                                store: store
-                            )) {
+                            NavigationLink(
+                                destination: CompassMapContainerView(
+                                    id: sighting.id,
+                                    store: store,
+                                    locationManager: locationManager
+                                )
+                            ) {
                                 VStack(alignment: .leading) {
                                     Text(sighting.name)
                                         .font(.headline)
@@ -71,6 +75,7 @@ struct SightingsListView: View {
 
 #Preview {
     SightingsListView(
-        store: .preview
+        store: .preview,
+        locationManager: .preview
     )
 }

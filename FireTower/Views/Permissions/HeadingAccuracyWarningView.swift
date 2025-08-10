@@ -11,7 +11,7 @@ struct HeadingAccuracyWarningView: View {
     @ObservedObject var locationManager: LocationManager
 
     var body: some View {
-        if locationManager.headingAccuracy > 20 {
+        if locationManager.headingAccuracy > 25 {
             HStack(spacing: 12) {
                 Image(systemName: "location.north.line")
                 VStack(alignment: .leading) {
@@ -33,7 +33,7 @@ struct HeadingAccuracyWarningView: View {
 extension LocationManager {
     static var mockPreview: LocationManager {
         let manager = LocationManager()
-        manager.headingAccuracy = Double.random(in: 0...25)
+        manager.headingAccuracy = Double.random(in: 0...30)
         return manager
     }
 }

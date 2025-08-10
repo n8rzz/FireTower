@@ -14,15 +14,24 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            SightingsListView(store: sightingStore)
+            SightingsListView(
+                store: sightingStore,
+                locationManager: locationManager
+            )
                 .tabItem {
                     Label("Sightings", systemImage: "binoculars.fill")
                 }
 
-            CompassMapContainerView(locationManager: locationManager)
-                .tabItem {
-                    Label("Compass/Map", systemImage: "arrowshape.up")
-                }
+            NavigationStack {
+                CompassMapContainerView(
+                    id: nil,
+                    store: sightingStore,
+                    locationManager: locationManager
+                )
+            }
+            .tabItem {
+                Label("Compass/Map", systemImage: "location.north")
+            }
 
             SettingsView()
                 .tabItem {
