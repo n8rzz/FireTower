@@ -43,8 +43,6 @@
 - [x] Sighting Detail View:
   - [x] List all observations in selected sighting
   - [x] Tap to view details
-  - [ ] Delete observation
-  - [ ] (Optional) Edit screen for heading/lat/lng
 
 ---
 
@@ -53,7 +51,7 @@
 - [x] Re-map Sighting Detail view to Compass view
   - [x] **Replace navigation target**
     - [x] In `SightingsListView`, change `NavigationLink` destination from `SightingDetailView` → `CompassMapContainerView`
-    - x ] Pass `sighting.id`, `store`, and `locationManager` to Compass view
+    - [x] Pass `sighting.id`, `store`, and `locationManager` to Compass view
     - [x] Remove `NavigationView` wrapper inside Compass to avoid nested nav bars
     - [x] Set navigation title to the active sighting's name
   - [x] **Compass view data source**
@@ -61,15 +59,15 @@
     - [x] Add computed property to fetch `Sighting` from store by id
     - [x] Ensure computed property updates when `store.sightings` changes
     - [ ] bug: view shifts up when "New Sighting" text is replaced with the date
-  - [ ] **Observations list under Capture**
-    - [ ] Show list header: `"Observations (n/5)"`
-    - [/] Include footer: `"Maximum of 5 observations reached."` when at max
-    - [ ] List each observation with:
+  - [x] **Observations list under Capture**
+    - [x] Show list header: `"Observations (n/5)"`
+    - [x] Include footer: `"Maximum of 5 observations reached."` when at max
+    - [x] List each observation with:
       - Name (e.g., "O1")
       - Heading in degrees
       - Lat/Lon coordinates
-    - [ ] Support swipe-to-delete (updates store)
-    - [ ] Empty state text: `"No observations yet"`
+    - [x] Support swipe-to-delete (updates store)
+    - [x] Empty state text: `"No observations yet"`
   - [x] **Capture button rules**
     - [x] Disable Capture button when at 5/5 observations
     - [/] Show info text when disabled: `"Maximum of 5 observations reached."`
@@ -80,6 +78,37 @@
   - [x] CoreMotion: tilt detection → `tiltDegrees`, `isFlat` (±20°)
   - [x] Publish: `headingDegrees`, `headingAccuracy`, `headingSource`, `location`, `locationAccuracy`, `isFlat`, `needsCalibrationHint`
   - [x] Lifecycle: `startUpdates()` / `stopUpdates()`
+
+- [x] Capture button (real data)
+  - [x] Gather: heading, headingAccuracy, lat, lon, horizontalAccuracy, timestamp
+  - [x] Auto-assign name based on time
+  - [x] Append to active `Sighting` in `SightingStore`
+  - [x] Disable capture when at max
+
+- [x] Confirmation feedback on capture
+  - [x] Haptic feedback
+  - [x] Toast/snackbar (“Captured O#”)
+  - [ ] Visual pulse around dial
+
+- [ ] Observation sheet view
+  - [ ] Editable Sighting name (inline)
+  - [x] Read-only list of observations (MVP)
+  - [x] Delete observation support
+
+- [x] Navigation
+  - [x] Pass active `Sighting` ID from Sightings list to Compass container
+  - [x] Inject `SightingStore` singleton into Compass container
+
+- [x] Live sensor stats (always visible under Capture)
+  - [x] Heading (°) + source
+  - [x] Heading accuracy
+  - [x] Lat / Lon
+  - [x] GPS accuracy
+  - [x] Tilt° + flatness state
+
+- [x] Permissions
+  - [x] Ensure “When In Use” location permission (already in place)
+  - [x] Allow system compass calibration prompt
 
 - [ ] ADF-style compass view
   - [ ] Fixed arrow pointing up
@@ -93,37 +122,6 @@
   - [ ] Show warning if `horizontalAccuracy > 30 m`
   - [ ] Tilt overlay when outside ±20° (warn only)
   - [ ] “Calibrate for best results” banner when `needsCalibrationHint == true`
-
-- [ ] Capture button (real data)
-  - [ ] Gather: heading, headingAccuracy, lat, lon, horizontalAccuracy, timestamp
-  - [ ] Auto-assign name (`O1`, `O2`, …) based on count
-  - [ ] Append to active `Sighting` in `SightingStore`
-  - [ ] Disable capture when at max
-
-- [ ] Confirmation feedback on capture
-  - [ ] Haptic feedback
-  - [ ] Toast/snackbar (“Captured O#”)
-  - [ ] Visual pulse around dial
-
-- [ ] Observation sheet view
-  - [ ] Editable Sighting name (inline)
-  - [ ] Read-only list of observations (MVP)
-  - [ ] (Future) Delete observation support
-
-- [ ] Navigation
-  - [ ] Pass active `Sighting` ID from Sightings list to Compass container
-  - [ ] Inject `SightingStore` singleton into Compass container
-
-- [x] Live sensor stats (always visible under Capture)
-  - [x] Heading (°) + source
-  - [x] Heading accuracy
-  - [x] Lat / Lon
-  - [x] GPS accuracy
-  - [x] Tilt° + flatness state
-
-- [x] Permissions
-  - [x] Ensure “When In Use” location permission (already in place)
-  - [x] Allow system compass calibration prompt
 
 - [ ] Polish
   - [ ] Portrait-only enforcement

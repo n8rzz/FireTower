@@ -28,10 +28,12 @@ struct CompassMapContainerView: View {
         return store.sightings.first(where: { $0.id == sightingID })
     }
     
-    private var headingBadgeText: String {
-        guard locationManager.heading != nil else { return "---" }
-        let value = Int(round(locationManager.headingDegrees))
-        return "\(value)"
+    private var headingSourceLabel: String {
+        switch locationManager.headingSource {
+            case .true: return "True"
+            case .magnetic: return "Mag"
+            case .unknown: return "—"
+        }
     }
         
     init(
@@ -82,28 +84,17 @@ struct CompassMapContainerView: View {
         List {
             HeadingAccuracyWarningView(locationManager: locationManager)
             
-            HeadingBadge(text: headingBadgeText)
-                .padding(.top, 8)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .listRowInsets(EdgeInsets())
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
-            
-            // TODO: abstract?
-            // MARK: - Compass
-            ZStack {
-                Circle()
-                    .strokeBorder(Color.gray, lineWidth: 8)
-                    .frame(width: 350, height: 350)
+            let liveHeading = locationManager.headingDegrees
 
-                ArrowView(shaftHeight: 305.0)
-            }
-            .padding(.top, 5)
-            .padding(.bottom, 10)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .listRowInsets(EdgeInsets())
+            CompassHeader(
+                headingDegrees: liveHeading,
+                headingSourceText: headingSourceLabel,
+                accent: .primary
+            )
+            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
+            .padding(.bottom, 90)
             
             // MARK: - Capture
             HStack {
@@ -167,11 +158,7 @@ struct CompassMapContainerView: View {
             // MARK - Observations
             if let s = sighting {
                 Section(
-                    header: Text("Observations (\(s.observations.count)/\(Sighting.maxObservationCount))"),
-                    footer: isAtMaximumObservations
-                        ? Text("Maximum of \(Sighting.maxObservationCount) observations reached.")
-                            .foregroundColor(.secondary)
-                        : nil
+                    header: Text("Observations (\(s.observations.count)/\(Sighting.maxObservationCount))")
                 ) {
                     if s.observations.isEmpty {
                         Text("No observations yet")

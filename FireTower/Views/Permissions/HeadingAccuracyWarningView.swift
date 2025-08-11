@@ -29,11 +29,3 @@ struct HeadingAccuracyWarningView: View {
         }
     }
 }
-
-extension LocationManager {
-    static var mockPreview: LocationManager {
-        let manager = LocationManager()
-        manager.headingAccuracy = Double.random(in: 0...30)
-        return manager
-    }
-}
