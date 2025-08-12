@@ -81,23 +81,26 @@ struct CompassMapContainerView: View {
     }
     
     var body: some View {
-        List {
-            HeadingAccuracyWarningView(locationManager: locationManager)
-            
-            let liveHeading = locationManager.headingDegrees
+        VStack(spacing: 0) {
+            // MARK: - Compass Section
+            VStack(spacing: 24) {
+                HeadingAccuracyWarningView(locationManager: locationManager)
+                
+                let liveHeading = locationManager.headingDegrees
 
-            CompassHeader(
-                headingDegrees: liveHeading,
-                headingSourceText: headingSourceLabel,
-                accent: .primary
-            )
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-            .listRowSeparator(.hidden)
-            .listRowBackground(Color.clear)
-            .padding(.bottom, 90)
+                CompassHeader(
+                    headingDegrees: liveHeading,
+                    headingSourceText: headingSourceLabel,
+                    accent: .primary
+                )
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
             
-            // MARK: - Capture
-            HStack {
+            Spacer(minLength: 90)
+            
+            // MARK: - Capture Section
+            VStack(spacing: 16) {
                 Button(action: {
                     if activeSightingID == nil {
                         let sightingName = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .none)
@@ -133,53 +136,29 @@ struct CompassMapContainerView: View {
                         .cornerRadius(12)
                 }
                 .disabled(isAtMaximumObservations)
-            }
-            .padding(.horizontal, 16)
-            .listRowInsets(EdgeInsets())
-            .listRowSeparator(.hidden)
-            .listRowBackground(Color.clear)
-            
-            if isAtMaximumObservations {
-                Text("Maximum of \(Sighting.maxObservationCount) observations reached")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.top, 2)
-                    .listRowInsets(EdgeInsets())
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-            }
-            
-//            SensorStatsView(locationManager: locationManager)
-//                .listRowInsets(EdgeInsets())
-//                .listRowSeparator(.hidden)
-//                .listRowBackground(Color.clear)
-            
-            // MARK - Observations
-            if let s = sighting {
-                Section(
-                    header: Text("Observations (\(s.observations.count)/\(Sighting.maxObservationCount))")
-                ) {
-                    if s.observations.isEmpty {
-                        Text("No observations yet")
-                            .foregroundColor(.secondary)
-                    } else {
-                        ForEach(s.observations) { obs in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(obs.name).font(.headline)
-                                Text("Heading: \(Int(obs.heading))°")
-                                Text("Location: \(obs.latitude), \(obs.longitude)")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                        .onDelete(perform: deleteObservation)
-                    }
+                .padding(.horizontal, 16)
+                
+                if isAtMaximumObservations {
+                    Text("Maximum of \(Sighting.maxObservationCount) observations reached")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .listStyle(.insetGrouped)
             }
+            
+            Spacer(minLength: 24)
+            
+            // MARK: - Observations Section
+            if let s = sighting {
+                ObservationsSection(
+                    observations: s.observations,
+                    maxCount: Sighting.maxObservationCount,
+                    onDelete: deleteObservation
+                )
+            }
+            
+            Spacer(minLength: 16)
         }
-        .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
         .background(Color(.systemBackground))
         .navigationTitle(sighting?.name ?? "New Sighting")

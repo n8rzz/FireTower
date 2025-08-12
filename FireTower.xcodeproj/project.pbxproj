@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1142C89F2E4843E6002E0B60 /* HeadingBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142C89E2E4843E6002E0B60 /* HeadingBadge.swift */; };
 		1142C8A12E48595B002E0B60 /* ToastBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1142C8A02E48595B002E0B60 /* ToastBanner.swift */; };
+		1176E4C92E4AEED300F044B2 /* ObservationSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176E4C82E4AEED300F044B2 /* ObservationSection.swift */; };
 		11C9C3CC2E41C54F00D5C7EF /* FireTowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */; };
 		11C9C3CE2E41C54F00D5C7EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */; };
 		11C9C3D02E41C55100D5C7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11C9C3CF2E41C55100D5C7EF /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		1142C89E2E4843E6002E0B60 /* HeadingBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingBadge.swift; sourceTree = "<group>"; };
 		1142C8A02E48595B002E0B60 /* ToastBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastBanner.swift; sourceTree = "<group>"; };
+		1176E4C82E4AEED300F044B2 /* ObservationSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationSection.swift; sourceTree = "<group>"; };
 		11C9C3C82E41C54F00D5C7EF /* FireTower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireTower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11C9C3CB2E41C54F00D5C7EF /* FireTowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireTowerApp.swift; sourceTree = "<group>"; };
 		11C9C3CD2E41C54F00D5C7EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				11E52C702E49AD5A005A80FE /* Compass */,
 				11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */,
 				1142C8A02E48595B002E0B60 /* ToastBanner.swift */,
+				1176E4C82E4AEED300F044B2 /* ObservationSection.swift */,
 			);
 			path = CompassScreen;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				11E52C6F2E49A650005A80FE /* AroundCircle.swift in Sources */,
 				11C9C41E2E4308CF00D5C7EF /* CompassMapContainerView.swift in Sources */,
 				11EACC802E45ACD9009BF91C /* SightingStore.swift in Sources */,
+				1176E4C92E4AEED300F044B2 /* ObservationSection.swift in Sources */,
 				11EACC722E43223E009BF91C /* FireTowerSilhouette.swift in Sources */,
 				11C9C4012E41C89700D5C7EF /* Theme.swift in Sources */,
 				1142C89F2E4843E6002E0B60 /* HeadingBadge.swift in Sources */,
