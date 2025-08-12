@@ -32,7 +32,7 @@ struct HeadingBadge: View {
             // Calibrator: invisible but reserves space so all badges match
             VStack(spacing: 4) {
                 Text(reserveSampleDegrees)
-                    .font(.system(size: 24, weight: .semibold, design: .rounded))
+                    .font(.system(size: 22, weight: .semibold, design: .rounded))
                     .monospacedDigit()
                 Text(reserveSampleSource)
                     .font(.caption).bold()
@@ -42,7 +42,7 @@ struct HeadingBadge: View {
             // Actual content
             VStack(spacing: 4) {
                 Text(formattedDegrees)
-                    .font(.system(size: 22, weight: .semibold, design: .rounded))
+                    .font(.system(size: 20, weight: .semibold, design: .rounded))
                     .monospacedDigit()
 
                 if let s = sourceText {

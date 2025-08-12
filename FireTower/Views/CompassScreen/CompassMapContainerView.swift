@@ -17,8 +17,6 @@ struct CompassMapContainerView: View {
     @State private var activeSightingID: UUID?
     @State private var lastCapturedObservation: Observation?
     @State private var shouldShowMap = false
-    @State private var shouldShowToast = false
-    @State private var toastMessage = ""
     
     private var observationCount: Int { sighting?.observations.count ?? 0 }
     private var isAtMaximumObservations: Bool { observationCount >= Sighting.maxObservationCount}
@@ -120,11 +118,6 @@ struct CompassMapContainerView: View {
                     lastCapturedObservation = observationToCreate
 
                     UINotificationFeedbackGenerator().notificationOccurred(.success)
-                    toastMessage = "Captured \(observationToCreate.name)"
-                    withAnimation { shouldShowToast = true }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        withAnimation { shouldShowToast = false }
-                    }
                 }) {
                     Text("Capture")
                         .font(.headline)
@@ -178,26 +171,16 @@ struct CompassMapContainerView: View {
                 activeSightingID = id
             }
         }
-        .overlay(alignment: .top) {
-            if shouldShowToast {
-                ToastBanner(text: toastMessage)
-                    .transition(.move(edge: .top).combined(with: .opacity))
-                    .padding(.top, 8)
-                
-            }
-        }
         .sheet(isPresented: $shouldShowMap) {
             VStack {
-                Spacer()
-                
-                Text("Observations (\(sighting?.observations.count ?? 0))")
-                    .font(.title)
-                    .padding()
-                
-                Rectangle()
-                    .foregroundColor(.gray)
-                    .padding()
-                    .cornerRadius(10)
+                if let s = sighting {
+                    NavigationView {
+                        SightingMapView(sighting: s)
+                    }
+                } else {
+                    Text("No observations for sighting")
+                        .padding()
+                }
             }
             .presentationDetents([.medium, .large])
         }
