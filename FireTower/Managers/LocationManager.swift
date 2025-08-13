@@ -29,11 +29,20 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     @Published var headingDegrees: Double = 0
     @Published var headingSource: HeadingSource = .unknown
+    @Published var headingDegreesContinuous: Double = 0
+    @Published var headingDegreesDisplay: Double = 0
+
     @Published var tiltDegrees: Double = 0
     @Published var isFlat: Bool = true
     @Published var needsCalibrationHint: Bool = false
     
     // MARK: - Config
+    // --- Smoothing config/state ---
+    private let alpha: Double = 0.50    // low‑pass (0..1). Higher = snappier
+    private let deadband: Double = 0.3  // ignore micro jitter (< this many degrees)
+    private var hasFilter: Bool = false
+    private var lastRaw: Double = 0
+    private var smoothed: Double = 0
     /// Flatness threshold in degrees; user can still capture when not flat (warning only)
     private let flatnessThreshold: Double = 20
     /// UX hint threshold for "low compass accuracy"
@@ -108,17 +117,17 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         heading = newHeading
         headingAccuracy = newHeading.headingAccuracy
 
-        // Prefer true heading when valid; else use magnetic
-        let usingTrue = newHeading.trueHeading >= 0   // per Apple docs, -1 means invalid
-        if usingTrue {
-            headingDegrees = LocationManager.normalizeDegrees(newHeading.trueHeading)
-            headingSource = .true
-        } else {
-            headingDegrees = LocationManager.normalizeDegrees(newHeading.magneticHeading)
-            headingSource = .magnetic
-        }
+        // Prefer true heading; fallback to magnetic
+        let usingTrue = newHeading.trueHeading >= 0
+        let raw = usingTrue
+            ? LocationManager.normalizeDegrees(newHeading.trueHeading)
+            : LocationManager.normalizeDegrees(newHeading.magneticHeading)
 
-        // Simple heuristic for a calibration UX hint
+        headingSource = usingTrue ? .true : .magnetic
+        headingDegrees = raw  // raw, normalized 0..360 (for any legacy uses)
+
+        processHeading(raw: raw)
+
         needsCalibrationHint = headingAccuracy < 0 || headingAccuracy > poorHeadingAccuracyThreshold
     }
 
@@ -138,6 +147,37 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         if manager.authorizationStatus == .notDetermined {
             manager.requestWhenInUseAuthorization()
         }
+    }
+    
+    private func processHeading(raw: Double) {
+        if !hasFilter {
+            hasFilter = true
+            lastRaw = raw
+            smoothed = raw
+            headingDegreesContinuous = raw
+            headingDegreesDisplay = raw
+            return
+        }
+
+        // shortest delta in (-180, +180]
+        var delta = raw - lastRaw
+        if delta > 180 { delta -= 360 }
+        if delta <= -180 { delta += 360 }
+
+        // ignore tiny jitter
+        if abs(delta) < deadband { delta = 0 }
+
+        // build a continuous angle (can exceed 360 / go negative)
+        let continuous = headingDegreesContinuous + delta
+
+        // low-pass filter
+        let s = alpha * continuous + (1 - alpha) * smoothed
+        smoothed = s
+
+        // publish
+        headingDegreesContinuous = s
+        headingDegreesDisplay = LocationManager.normalizeDegrees(s)
+        lastRaw = raw
     }
 }
 

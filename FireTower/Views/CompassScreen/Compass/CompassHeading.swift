@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CompassHeader: View {
     let headingDegrees: Double?
+    let headingDegreesDisplay: Double?
     let headingSourceText: String?
 
     var accent: Color = .primary
@@ -22,7 +23,7 @@ struct CompassHeader: View {
 
             VStack(spacing: 12) {
                 HeadingBadge(
-                    degrees: headingDegrees,
+                    degrees: headingDegreesDisplay,
                     sourceText: headingSourceText
                 )
 
@@ -58,6 +59,7 @@ struct CompassHeader: View {
             VStack(spacing: 24) {
                 CompassHeader(
                     headingDegrees: heading,
+                    headingDegreesDisplay: heading,
                     headingSourceText: "Mag",
                     accent: .primary
                 )

@@ -24,34 +24,36 @@ struct ObservationsSection: View {
                     .foregroundColor(.secondary)
                     .padding(.horizontal, 16)
             } else {
-                ScrollView {
-                    LazyVStack(spacing: 8) {
-                        ForEach(observations) { obs in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(obs.name).font(.headline)
-                                Text("Heading: \(Int(obs.heading))°")
-                                Text("Location: \(obs.latitude), \(obs.longitude)")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 12)
-                            .background(Color(.systemGray6))
-                            .cornerRadius(8)
-                            .padding(.horizontal, 16)
-                            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                                Button(role: .destructive) {
-                                    if let index = observations.firstIndex(where: { $0.id == obs.id }) {
-                                        onDelete(IndexSet(integer: index))
-                                    }
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                            }
+                // Replace your ScrollView/LazyVStack with this:
+                List {
+                    ForEach(observations) { obs in
+                        // Card content
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(obs.name).font(.headline)
+                            Text("Heading: \(Int(obs.heading))°")
+                            Text("Location: \(obs.latitude), \(obs.longitude)")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
                         }
+                        // INTERNAL padding (inside the card)
+                        .padding(12)
+                        // Make the row fill the entire list width
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        // Card background
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color(.systemGray6))
+                        )
+                        .contentShape(Rectangle()) // good for taps/menus
+                        // OUTER spacing (gutter around the card)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
                     }
+                    .onDelete(perform: onDelete)
                 }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden) // optional: remove default grouped bg
                 .frame(maxHeight: 300)
             }
         }

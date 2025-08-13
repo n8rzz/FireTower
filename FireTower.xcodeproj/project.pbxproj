@@ -144,9 +144,9 @@
 			children = (
 				11E52C702E49AD5A005A80FE /* Compass */,
 				11C9C41D2E4308CF00D5C7EF /* CompassMapContainerView.swift */,
-				1142C8A02E48595B002E0B60 /* ToastBanner.swift */,
 				1176E4C82E4AEED300F044B2 /* ObservationSection.swift */,
 				1176E4CA2E4AF50D00F044B2 /* SightingMapView.swift */,
+				1142C8A02E48595B002E0B60 /* ToastBanner.swift */,
 			);
 			path = CompassScreen;
 			sourceTree = "<group>";

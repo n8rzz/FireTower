@@ -4,14 +4,15 @@
 
 ## Map View & Triangulation Logic
 
-- [ ] Show observation points on MapKit
-- [ ] Draw directional rays from each point (based on heading)
+- [x] Show observation points on MapKit
+- [x] Draw directional rays from each point (based on heading)
 - [ ] Add intersection logic:
   - [ ] 2-ray: basic line intersection
   - [ ] 3+ ray: least-squares intersection
 - [ ] Plot intersection point on map
 - [ ] Update in real-time as observations are added/removed
 - [ ] Configurable ray length (default 25 mi)
+- [ ] Plotting 3rd ray plots in the wrong direction
 
 ---
 
